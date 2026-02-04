@@ -1,0 +1,37 @@
+# Maven
+target/
+.m2/
+*.jar
+*.war
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+*.iml
+
+# Git
+.git/
+
+# Logs
+*.log
+logs/
+
+# Environment
+.env
+.env.local
+
+# Java
+*.class
+*.jar
+*.zip
+
+# Node (if using npm)
+node_modules/
+package-lock.json
+
+# MacOS
+.DS_Store
