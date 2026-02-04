@@ -1,0 +1,18 @@
+{
+  "groups": [
+    {
+      "name": "app.cors",
+      "type": "com.example.demo.config.CorsProperties",
+      "description": "CORS configuration properties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "app.cors.allowed-origins",
+      "type": "java.lang.String",
+      "description": "Comma-separated list of allowed CORS origins",
+      "defaultValue": "http://localhost:3000,http://localhost:4200,http://localhost:8080"
+    }
+  ],
+  "hints": []
+}
