@@ -4,6 +4,11 @@
       "name": "app.cors",
       "type": "com.example.demo.config.CorsProperties",
       "description": "CORS configuration properties"
+    },
+    {
+      "name": "management.h2.console",
+      "type": "org.springframework.boot.autoconfigure.h2.H2ConsoleProperties",
+      "description": "H2 Console configuration"
     }
   ],
   "properties": [
@@ -12,6 +17,24 @@
       "type": "java.lang.String",
       "description": "Comma-separated list of allowed CORS origins",
       "defaultValue": "http://localhost:3000,http://localhost:4200,http://localhost:8080"
+    },
+    {
+      "name": "management.h2.console.enabled",
+      "type": "java.lang.Boolean",
+      "description": "Enable H2 console",
+      "defaultValue": false
+    },
+    {
+      "name": "management.h2.console.path",
+      "type": "java.lang.String",
+      "description": "Path to the H2 console",
+      "defaultValue": "/h2-console"
+    },
+    {
+      "name": "spring.jackson.serialization.WRITE_DATES_AS_TIMESTAMPS",
+      "type": "java.lang.Boolean",
+      "description": "Whether to write dates as timestamps",
+      "defaultValue": false
     }
   ],
   "hints": []
