@@ -22,7 +22,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/api/donors")
+@RequestMapping("/api/donors-new")
 @RequiredArgsConstructor
 public class DonorController {
     
