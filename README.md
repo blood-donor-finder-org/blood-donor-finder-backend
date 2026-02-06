@@ -43,7 +43,7 @@ SonarQube / SonarCloud
 Render (Backend Deployment)
 
 ▶️ Run Locally
-git clone https://github.com/YOUR_GITHUB_USERNAME/blood-donor-backend.git
+git clone https://github.com/vasanth005-117/blood-donor-finder-backend.git
 cd blood-donor-backend
 mvn spring-boot:run
 
