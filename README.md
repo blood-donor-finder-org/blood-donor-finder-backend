@@ -75,7 +75,7 @@ docker run -p 8080:8080 blood-donor-backend
 Frontend is built using React and deployed on Vercel.
 
 👉 Frontend Repository:
-https://github.com/YOUR_GITHUB_USERNAME/blood-donor-frontend
+https://github.com/vasanth005-117/blood-donor-finder-frontend.git
 
 👉 Live Frontend URL:
 https://blood-donor-finder-frontend.vercel.app
