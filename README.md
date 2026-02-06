@@ -3,13 +3,13 @@ Blood Donor Finder – Backend
 This is the Spring Boot backend for the Blood Donor Finder System.
 It manages donor registration, blood availability tracking, search functionality, and data management for the application.
 
-🚀 Live Backend URL (Render – Free Plan)
+🚀 Live Backend URL (vercel – Free Plan)
 
-👉 https://your-backend-url.onrender.com/api/donors
+👉 http://localhost:8006/api/donors
 
 (Wait a few seconds for the server to start. Backend should return [] or donor data when opened.)
 
-⚠️ Important Note (Render Free Plan)
+⚠️ Important Note (vercel Free Plan)
 
 This backend is hosted on Render Free Plan.
 
