@@ -3,7 +3,14 @@ Blood Donor Finder – Backend
 This is the Spring Boot backend for the Blood Donor Finder System.
 It manages donor registration, blood availability tracking, search functionality, and data management for the application.
 
+<<<<<<< HEAD
 🚀 Live Backend URL (vercel – Free Plan)
+=======
+## Requirements
+- Java 21
+- Maven 3.9+
+- Docker (for containerization)
+>>>>>>> 21b376e (Step 3: Upgrade Java Version - Compile: SUCCESS)
 
 👉 http://localhost:8006/api/donors
 
