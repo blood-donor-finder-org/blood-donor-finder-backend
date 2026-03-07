@@ -3,7 +3,7 @@
 A Spring Boot application for managing blood donors and emergency requests.
 
 ## Requirements
-- Java 17
+- Java 21
 - Maven 3.9+
 - Docker (for containerization)
 
