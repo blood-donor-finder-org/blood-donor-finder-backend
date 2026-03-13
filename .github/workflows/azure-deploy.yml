@@ -29,17 +29,11 @@ jobs:
       - name: Build Spring Boot project
         run: mvn clean package -DskipTests
 
-      - name: Verify JAR
-        run: |
-          ls -lh target/*.jar
-          echo "Build successful"
-
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: java-app
           path: target/*.jar
-          retention-days: 1
 
 
   deploy:
@@ -62,7 +56,6 @@ jobs:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: '*.jar'
-          startup-command: 'java -jar /home/site/wwwroot/*.jar'
 
       - name: Deployment completed
-        run: echo "Deployment to Azure App Service successful"
+        run: echo "Deployment successful"
