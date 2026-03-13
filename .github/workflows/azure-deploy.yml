@@ -1,0 +1,78 @@
+name: Deploy to Azure App Service
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  AZURE_WEBAPP_NAME: blood-backend-api-eed9e5geg6epcwhg
+  JAVA_VERSION: '17'
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ env.JAVA_VERSION }}
+          cache: maven
+
+      - name: Build Spring Boot project
+        run: mvn clean package -DskipTests
+
+      - name: Verify JAR
+        run: |
+          ls -lh target/*.jar
+          echo "Build successful"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: java-app
+          path: target/*.jar
+          retention-days: 1
+
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: java-app
+
+      - name: Show files
+        run: ls -lh
+
+      # Azure Login (Fix for your error)
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_91C066435FC742FBAEA7F1167CD62964 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_25F6EB2026FF4397AB4D17039C3DD90B }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_443A9F3E08AA4EAF86439FE73D6CC347 }}
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          package: '*.jar'
+
+      - name: Deployment completed
+        run: echo "Deployment to Azure App Service successful"

@@ -28,5 +28,10 @@ jobs:
       - name: Build with Maven
         run: mvn clean package -DskipTests
       
-      - name: Success
-        run: echo "Build completed successfully!"
+      - name: Run tests
+        run: mvn test
+      
+      - name: Verify build artifacts
+        run: |
+          ls -lh target/*.jar
+          echo "✅ Build completed successfully!"

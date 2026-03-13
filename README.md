@@ -1,86 +1,88 @@
-# Blood Donor Finder - Backend
+Blood Donor Finder – Backend
 
-A Spring Boot application for managing blood donors and emergency requests.
+This is the Spring Boot backend for the Blood Donor Finder System.
+It manages donor registration, blood availability tracking, search functionality, and data management for the application.
 
+<<<<<<< HEAD
+🚀 Live Backend URL (vercel – Free Plan)
+=======
 ## Requirements
 - Java 21
 - Maven 3.9+
 - Docker (for containerization)
+>>>>>>> 21b376e (Step 3: Upgrade Java Version - Compile: SUCCESS)
 
-## Local Development
+👉 http://localhost:8006/api/donors
 
-### Build
-```bash
-mvn clean package
-```
+(Wait a few seconds for the server to start. Backend should return [] or donor data when opened.)
 
-### Run
-```bash
+⚠️ Important Note (vercel Free Plan)
+
+This backend is hosted on Render Free Plan.
+
+If the backend is idle, it may automatically go to sleep
+
+When opening the frontend, backend may take 30–60 seconds to wake up
+
+Please open the backend URL once before using the frontend
+
+📊 Project Presentation
+
+👉 Download Project PPT
+(Add your PPT link here if uploaded to Drive/GitHub)
+
+🛠️ Tech Stack
+
+Java
+
+Spring Boot
+
+Spring Data JPA
+
+H2 Database
+
+Maven
+
+Docker
+
+SonarQube / SonarCloud
+
+Render (Backend Deployment)
+
+▶️ Run Locally
+git clone https://github.com/vasanth005-117/blood-donor-finder-backend.git
+cd blood-donor-backend
 mvn spring-boot:run
-```
 
-The application runs on `http://localhost:8080`
 
-### Access H2 Console
-Navigate to `http://localhost:8080/h2-console` to view the in-memory database.
+Backend runs at:
 
-## Docker Setup
+👉 http://localhost:8080
 
-### Build Docker Image
-```bash
-docker build -t blood-donor-app:latest .
-```
+🔍 SonarQube / SonarCloud
 
-### Run with Docker
-```bash
-docker run -p 8080:8080 blood-donor-app:latest
-```
+Code quality analysis integrated using CI Pipeline
 
-### Using Docker Compose
-```bash
-docker-compose up -d
-```
+Automated scanning using GitHub Actions
 
-To stop the container:
-```bash
-docker-compose down
-```
+Quality Gate Passed Successfully ✅
 
-## API Endpoints
+🐳 Backend Dockerization
 
-- **Donors**
-  - GET `/api/donors` - Get all donors
-  - POST `/api/donors` - Create a new donor
-  - GET `/api/donors/{id}` - Get donor by ID
-  - PUT `/api/donors/{id}` - Update donor
-  - DELETE `/api/donors/{id}` - Delete donor
+Docker is used to containerize the backend for easy deployment.
 
-- **Emergency Requests**
-  - GET `/api/emergency-requests` - Get all requests
-  - POST `/api/emergency-requests` - Create new request
-  - GET `/api/emergency-requests/{id}` - Get request by ID
-  - PUT `/api/emergency-requests/{id}` - Update request
-  - DELETE `/api/emergency-requests/{id}` - Delete request
+Build Docker Image
+docker build -t blood-donor-backend .
 
-## Database
+Run Docker Container
+docker run -p 8080:8080 blood-donor-backend
 
-The application uses an H2 in-memory database configured in `application.properties`.
+🌐 Frontend
 
-## Configuration
+Frontend is built using React and deployed on Vercel.
 
-Edit `src/main/resources/application.properties` to configure:
-- Server port (default: 8080)
-- Database connection
-- JPA/Hibernate settings
+👉 Frontend Repository:
+https://github.com/vasanth005-117/blood-donor-finder-frontend.git
 
-## Development
-
-### IDE Setup
-Import as Maven project in your IDE (IntelliJ, VS Code, Eclipse)
-
-### Hot Reload
-During development, use spring-boot-devtools for automatic restart on file changes.
-
-## License
-
-[Add your license here]
+👉 Live Frontend URL:
+https://blood-donor-finder-frontend.vercel.app
