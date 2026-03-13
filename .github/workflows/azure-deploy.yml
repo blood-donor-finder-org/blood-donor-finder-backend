@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_WEBAPP_NAME: blood-backend-api
+  AZURE_WEBAPP_NAME: blood-backend-api-eed9e5geg6epcwhg
   JAVA_VERSION: '17'
 
 jobs:
